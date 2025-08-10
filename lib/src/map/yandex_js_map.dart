@@ -80,24 +80,28 @@ class _YandexJsMapState extends State<YandexJsMap> {
         // Convert Dart objects to JavaScript-compatible formats
         final jsState = js.JsObject.jsify(widget.mapState.toJson());
         final jsOptions = js.JsObject.jsify(widget.mapOptions.toJson());
-        final jsPlacemarks = js.JsArray.from(
-            widget.placemarks.map((e) => js.JsObject.jsify(e.toJson())));
-        final jsPolygons = js.JsArray.from(
-            widget.polygons.map((e) => js.JsObject.jsify(e.toJson())));
-        final jsPolylines = js.JsArray.from(
-            widget.polylines.map((e) => js.JsObject.jsify(e.toJson())));
+        final jsPlacemarks = js.JsArray.from(widget.placemarks.map((e) => js.JsObject.jsify(e.toJson())));
+        final jsPolygons = js.JsArray.from(widget.polygons.map((e) => js.JsObject.jsify(e.toJson())));
+        final jsPolylines = js.JsArray.from(widget.polylines.map((e) => js.JsObject.jsify(e.toJson())));
 
         // Initialize the Yandex Map through JavaScript interop
-        js.context.callMethod('initYandexMap',
-            [divId, jsState, jsOptions, jsPlacemarks, jsPolygons, jsPolylines]);
+        js.context.callMethod('initYandexMap', [divId, jsState, jsOptions, jsPlacemarks, jsPolygons, jsPolylines]);
 
         // Create controller instance
-        controller = YandexJsMapController._init(
-            divId, widget.placemarks, widget.polygons, widget.polylines);
+        controller = YandexJsMapController._init(divId, widget.placemarks, widget.polygons, widget.polylines);
 
         return element;
       },
     );
+  }
+
+  @override
+  void dispose() {
+    final placemarksIds = js.JsArray.from(controller.placemarks.map((e) => e.id));
+    final polygonsIds = js.JsArray.from(controller.polygons.map((e) => e.id));
+    final polylinesIds = js.JsArray.from(controller.polylines.map((e) => e.id));
+    js.context.callMethod('destroyYandexMap', ['yandex-map-div-$mapId', placemarksIds, polygonsIds, polylinesIds]);
+    super.dispose();
   }
 
   @override

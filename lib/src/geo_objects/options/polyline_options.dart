@@ -75,14 +75,14 @@ class PolylineOptions {
 
   /// Creates polyline customization options
   const PolylineOptions({
-    this.cursor = "pointer",
+    this.cursor = 'pointer',
     this.draggable = false,
     this.hasBalloon = true,
     this.hasHint = true,
     this.interactiveZIndex = false,
-    this.interactivityModel = "default#geoObject",
-    this.pane = "areas",
-    this.lineStringOverlay = "default#polyline",
+    this.interactivityModel = 'default#geoObject',
+    this.pane = 'areas',
+    this.lineStringOverlay = 'default#polyline',
     this.opacity = 1.0,
     this.openBalloonOnClick = true,
     this.openEmptyBalloon = false,

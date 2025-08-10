@@ -21,8 +21,7 @@ class YandexJsMapFactory {
   /// - [suggestApiKey] Optional API key for suggest functionality
   ///
   /// Throws Exception if the script fails to load
-  static Future<void> setMapApi(String apiKey,
-      {String lang = 'ru_RU', String? suggestApiKey}) async {
+  static Future<void> setMapApi(String apiKey, {String lang = 'ru_RU', String? suggestApiKey}) async {
     // Store configuration parameters
     _apiKey = apiKey;
     _lang = lang;
@@ -31,8 +30,7 @@ class YandexJsMapFactory {
     // Construct URL parameters
     final langPath = 'lang=$lang';
     final apiKeyPath = '&apikey=$apiKey';
-    final suggestApiKeyPath =
-        _suggestApiKey != null ? '&suggest_apikey=$_suggestApiKey' : '';
+    final suggestApiKeyPath = _suggestApiKey != null ? '&suggest_apikey=$_suggestApiKey' : '';
 
     // Skip if script is already loaded
     if (html.document.getElementById('yandex-map-script') != null) return;
@@ -41,14 +39,12 @@ class YandexJsMapFactory {
     final script = html.ScriptElement()
       ..id = 'yandex-map-script'
       ..type = 'text/javascript'
-      ..src =
-          'https://api-maps.yandex.ru/2.1/?$langPath$apiKeyPath$suggestApiKeyPath';
+      ..src = 'https://api-maps.yandex.ru/2.1/?$langPath$apiKeyPath$suggestApiKeyPath';
 
     // Setup completer to handle script loading
     final completer = Completer<void>();
     script.onLoad.listen((_) => completer.complete());
-    script.onError.listen(
-        (e) => completer.completeError('Failed to load Yandex Maps script'));
+    script.onError.listen((e) => completer.completeError('Failed to load Yandex Maps script'));
 
     // Append script to document head
     html.document.head!.append(script);

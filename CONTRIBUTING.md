@@ -25,7 +25,7 @@ git checkout -b feature/your-feature-name
 
 ### 3. Make your changes
 
-- Format code: `dart format .`
+- Format code: `dart format -l 120 .`
 - Run analyzer: `dart analyze`
 - Make sure all JS and Dart changes are logically grouped.
 

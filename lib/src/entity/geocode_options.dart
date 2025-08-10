@@ -11,9 +11,6 @@ class GeocodeOptions {
   /// When combined with [strictBounds], can restrict results exclusively to this area.
   final List<PointEntity>? boundedBy;
 
-  /// Internal flag indicating JSON response format (always false for this implementation).
-  final bool json;
-
   /// Filters results to only include locations of the specified type.
   final String? kind;
 
@@ -61,7 +58,10 @@ class GeocodeOptions {
     this.searchCoordOrder,
     this.skip = 0,
     this.strictBounds = false,
-  }) : json = false;
+  });
+
+  /// Internal flag indicating JSON response format (always false for this implementation).
+  bool get json => false;
 
   /// Converts the options to a JavaScript-compatible format.
   ///

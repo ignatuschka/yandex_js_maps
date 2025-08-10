@@ -73,24 +73,18 @@ class MapOptions {
   Map<String, dynamic> toJson() {
     return {
       if (autoFitToViewport != null) 'autoFitToViewport': autoFitToViewport,
-      if (avoidFractionalZoom != null)
-        'avoidFractionalZoom': avoidFractionalZoom,
-      if (exitFullscreenByEsc != null)
-        'exitFullscreenByEsc': exitFullscreenByEsc,
+      if (avoidFractionalZoom != null) 'avoidFractionalZoom': avoidFractionalZoom,
+      if (exitFullscreenByEsc != null) 'exitFullscreenByEsc': exitFullscreenByEsc,
       if (fullscreenZIndex != null) 'fullscreenZIndex': fullscreenZIndex,
       if (mapAutoFocus != null) 'mapAutoFocus': mapAutoFocus,
-      if (maxAnimationZoomDifference != null)
-        'maxAnimationZoomDifference': maxAnimationZoomDifference,
+      if (maxAnimationZoomDifference != null) 'maxAnimationZoomDifference': maxAnimationZoomDifference,
       if (maxZoom != null) 'maxZoom': maxZoom,
       if (minZoom != null) 'minZoom': minZoom,
       if (nativeFullscreen != null) 'nativeFullscreen': nativeFullscreen,
       if (restrictMapArea != null) 'restrictMapArea': restrictMapArea,
-      if (suppressMapOpenBlock != null)
-        'suppressMapOpenBlock': suppressMapOpenBlock,
-      if (suppressObsoleteBrowserNotifier != null)
-        'suppressObsoleteBrowserNotifier': suppressObsoleteBrowserNotifier,
-      if (yandexMapAutoSwitch != null)
-        'yandexMapAutoSwitch': yandexMapAutoSwitch,
+      if (suppressMapOpenBlock != null) 'suppressMapOpenBlock': suppressMapOpenBlock,
+      if (suppressObsoleteBrowserNotifier != null) 'suppressObsoleteBrowserNotifier': suppressObsoleteBrowserNotifier,
+      if (yandexMapAutoSwitch != null) 'yandexMapAutoSwitch': yandexMapAutoSwitch,
       if (yandexMapDisablePoiInteractivity != null)
         'yandexMapDisablePoiInteractivity': yandexMapDisablePoiInteractivity,
       if (yandexMapType != null) 'yandexMapType': yandexMapType,

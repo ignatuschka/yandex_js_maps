@@ -114,8 +114,8 @@ final suggestions = await _controller.suggest('Тверская');
 | Move Camera    | `moveTo()`, `fitBounds()` |
 | Zoom Control   | `setZoom()`, `zoomIn()`, `zoomOut()` |
 | Placemarks     | `addPlacemark()`, `removePlacemark()`, `updatePlacemark...()` |
-| Polygons       | `addPolygon()`, `updatePolygonGeometry()` |
-| Polylines      | `addPolyline()`, `removePolyline()` |
+| Polygons       | `addPolygon()`, `removePolygon()`, `updatePolygon...()` |
+| Polylines      | `addPolyline()`, `removePolyline()`, `updatePolyline...()` |
 | Geocoding      | `geocode()` |
 | Suggest        | `suggest()` |
 
@@ -186,7 +186,6 @@ class _MyAppState extends State<MyApp> {
 - This package only works on **Flutter Web**.
 - `dart:html`, `dart:js_interop`, and `dart:js_util` are not supported on mobile/desktop.
 - Yandex JS API requires an internet connection to load scripts.
-- JS scripts must be hosted locally inside your app’s web assets.
 
 ---
 

@@ -46,8 +46,7 @@ class PolygonEntity {
   /// Useful for storage or transmission of polygon data.
   Map<String, dynamic> toJson() => {
         'id': id,
-        'geometry':
-            geometry.map((e) => e.map((e) => [e.lat, e.lon]).toList()).toList(),
+        'geometry': geometry.map((e) => e.map((e) => [e.lat, e.lon]).toList()).toList(),
         'properties': properties.toJson(),
         'options': options.toJson(),
       };

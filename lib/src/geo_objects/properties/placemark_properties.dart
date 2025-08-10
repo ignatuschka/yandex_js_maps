@@ -55,11 +55,9 @@ class PlacemarkProperties {
       if (iconCaption != null) 'iconCaption': iconCaption,
       if (hintContent != null) 'hintContent': hintContent,
       if (balloonContent != null) 'balloonContent': balloonContent,
-      if (balloonContentHeader != null)
-        'balloonContentHeader': balloonContentHeader,
+      if (balloonContentHeader != null) 'balloonContentHeader': balloonContentHeader,
       if (balloonContentBody != null) 'balloonContentBody': balloonContentBody,
-      if (balloonContentFooter != null)
-        'balloonContentFooter': balloonContentFooter,
+      if (balloonContentFooter != null) 'balloonContentFooter': balloonContentFooter,
     };
   }
 }
